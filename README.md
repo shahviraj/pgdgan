@@ -18,7 +18,7 @@ Pip installation can be done by ```$ pip install -r requirements.txt```
     $ ./setup/download_data.sh 
     ```
 3. To train the DCGAN on celebA from scratch, please visit https://github.com/carpedm20/DCGAN-tensorflow, and follow the instructions.
- Else, pretrained GAN model is available, courtesy [Bora et al.](https://github.com/AshishBora/csgm)
+ Else, pretrained GAN model is available, courtesy [Bora et al.](https://github.com/AshishBora/csgm).
  To download it, please run the following script*: 
    ```shell
    $ ./setup/download_models.sh
