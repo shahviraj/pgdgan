@@ -133,7 +133,7 @@ if __name__ == '__main__':
     PARSER.add_argument('--learning-rate', type=float, default=0.1, help='learning rate')
     PARSER.add_argument('--momentum', type=float, default=0.9, help='momentum value')
     PARSER.add_argument('--max-update-iter', type=int, default=100, help='maximum updates to z')
-    PARSER.add_argument('--num-random-restarts', type=int, default=10, help='number of random restarts')
+    PARSER.add_argument('--num-random-restarts', type=int, default=1, help='number of random restarts')
     PARSER.add_argument('--decay-lr', action='store_true', help='whether to decay learning rate')
     PARSER.add_argument('--outer-learning-rate', type=float, default=0.5, help='learning rate of outer loop GD')
     PARSER.add_argument('--max-outer-iter', type=int, default=10, help='maximum no. of iterations for outer loop GD')
