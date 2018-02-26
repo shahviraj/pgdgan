@@ -23,7 +23,7 @@ def main(hparams):
     x_hats_dict = {'dcgan' : {}}
     x_batch_dict = {}
     for key, x in xs_dict.iteritems():
-        if not hparams.not_lazy:
+        if hparams.lazy:
             # If lazy, first check if the image has already been
             # saved before by *all* estimators. If yes, then skip this image.
             save_paths = utils.get_save_paths(hparams, key)
@@ -121,16 +121,16 @@ if __name__ == '__main__':
     PARSER.add_argument('--num-outer-measurements', type=int, default=1000, help='number of gaussian measurements(outer)')
 
     # Model
-    PARSER.add_argument('--model-types', type=str, nargs='+', default=None, help='model(s) used for estimation')
+    PARSER.add_argument('--model-types', type=str, nargs='+', default=['dcgan'], help='model(s) used for estimation')
     PARSER.add_argument('--mloss1_weight', type=float, default=0.0, help='L1 measurement loss weight')
-    PARSER.add_argument('--mloss2_weight', type=float, default=0.0, help='L2 measurement loss weight')
-    PARSER.add_argument('--zprior_weight', type=float, default=0.0, help='weight on z prior')
+    PARSER.add_argument('--mloss2_weight', type=float, default=1.0, help='L2 measurement loss weight')
+    PARSER.add_argument('--zprior_weight', type=float, default=0.001, help='weight on z prior')
     PARSER.add_argument('--dloss1_weight', type=float, default=0.0, help='-log(D(G(z))')
     PARSER.add_argument('--dloss2_weight', type=float, default=0.0, help='log(1-D(G(z))')
 
     # NN specfic hparams
-    PARSER.add_argument('--optimizer-type', type=str, default='momentum', help='Optimizer type')
-    PARSER.add_argument('--learning-rate', type=float, default=0.01, help='learning rate')
+    PARSER.add_argument('--optimizer-type', type=str, default='adam', help='Optimizer type')
+    PARSER.add_argument('--learning-rate', type=float, default=0.1, help='learning rate')
     PARSER.add_argument('--momentum', type=float, default=0.9, help='momentum value')
     PARSER.add_argument('--max-update-iter', type=int, default=100, help='maximum updates to z')
     PARSER.add_argument('--num-random-restarts', type=int, default=10, help='number of random restarts')
@@ -140,12 +140,12 @@ if __name__ == '__main__':
 
 
     # Output
-    PARSER.add_argument('--not-lazy', action='store_true', help='whether the evaluation is lazy')
+    PARSER.add_argument('--lazy', action='store_true', help='whether the evaluation is lazy')
     PARSER.add_argument('--save-images', action='store_true', help='whether to save estimated images')
     PARSER.add_argument('--save-stats', action='store_true', help='whether to save estimated images')
     PARSER.add_argument('--print-stats', action='store_true', help='whether to print statistics')
     PARSER.add_argument('--checkpoint-iter', type=int, default=50, help='checkpoint every x batches')
-    PARSER.add_argument('--image-matrix', type=int, default=0,
+    PARSER.add_argument('--image-matrix', type=int, default=1,
                         help='''
                                 0 = 00 =      no       image matrix,
                                 1 = 01 =          show image matrix
