@@ -1,0 +1,16 @@
+python -u ./src/pgdgan.py \
+    --pretrained-model-dir=./models/celebA_64_64/ \
+    --input-type full-input \
+    --model-types dcgan \
+    --num-input-images 64 \
+    --batch-size 64 \
+    --measurement-type gaussian \
+    --num-outer-measurements 1000 \
+    --learning-rate 0.1 \
+    --outer-learning-rate 0.5 \
+    --max-update-iter 100 \
+    --max-outer-iter 10 \
+    --num-random-restarts 1 \
+    --print-stats \
+    --image-matrix 1 \
+    --save-images
