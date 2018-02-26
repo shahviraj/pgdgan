@@ -2,7 +2,7 @@
 
 Code for the paper: [Solving Linear Inverse Problems Using GAN Priors: An Algorithm with Provable Guarantees](https://arxiv.org/abs/1802.08406).
 
-#### Requirements: 
+### Requirements 
 ---
 To run this code, you require Python 2.7, Tensorflow 1.0.1 (preferably with GPU support), Scipy and PyPNG.
 
