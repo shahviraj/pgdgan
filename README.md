@@ -26,9 +26,9 @@ Pip installation can be done by ```$ pip install -r requirements.txt```
    Make sure the model is located at ```./models/celebA_64_64/```
 4. Run following to run the experiment:
     ```shell
-    $ python pgdgan.py
+    $ python ./src/pgdgan.py
     ```
-    You can also use the script available in ```./exp_scripts```
+    You can also use the script available in ```./exp_scripts/```
 
 
 \* replicated from https://github.com/AshishBora/csgm .
