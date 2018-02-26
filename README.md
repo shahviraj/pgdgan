@@ -6,8 +6,6 @@ Code for the paper: [Solving Linear Inverse Problems Using GAN Priors: An Algori
 ---
 To run this code, you require Python 2.7, Tensorflow 1.0.1 (preferably with GPU support), Scipy and PyPNG.
 
-Pip installation can be done by ```$ pip install -r requirements.txt```
-
 ### Instructions
 ---
 
