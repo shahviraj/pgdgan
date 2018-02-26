@@ -23,7 +23,7 @@ Pip installation can be done by ```$ pip install -r requirements.txt```
    ```shell
    $ ./setup/download_models.sh
    ```
-   Make sure the model is located at ```./models/celebA_64_64```
+   Make sure the model is located at ```./models/celebA_64_64/```
 4. Run following to run the experiment:
     ```shell
     $ python pgdgan.py
